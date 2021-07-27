@@ -1,0 +1,11 @@
+<h1>Brands#show</h1>
+
+<h2><%= @brand.name %></h2>
+
+<!-- SINGLE IMAGE
+  <%= cl_image_tag @brand.image %>
+-->
+
+<% @brand.images.each do |image| %>
+  <%= cl_image_tag image %>
+<% end %>
