@@ -14,9 +14,8 @@ class BrandsController < ApplicationController
   #   if params[:brand][:image].present?
   #     req = Cloudinary::Uploader.upload params[:brand][:image]
   #     brand.image = req["public_id"]
-  #     brand.save
   #   end
-
+  #   brand.save
   #   redirect_to brand_path(brand)
   # end
 
@@ -29,11 +28,10 @@ class BrandsController < ApplicationController
         req = Cloudinary::Uploader.upload image
         brand.images << req["public_id"]
       end
-
-      brand.save
     end
 
-    redirect_to brand_path(brand)
+    brand.save
+    redirect_to brand_path
   end
 
   def edit
